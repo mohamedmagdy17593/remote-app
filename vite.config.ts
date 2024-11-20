@@ -5,6 +5,11 @@ import federation from '@originjs/vite-plugin-federation';
 
 // https://vite.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   plugins: [
     react(),
     federation({
@@ -16,11 +21,6 @@ export default defineConfig({
       },
     }),
   ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
   build: {
     modulePreload: true,
     target: 'esnext',

@@ -1,4 +1,5 @@
 import { Home, LayoutDashboard } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
@@ -8,22 +9,22 @@ export default function Nav() {
           <div className="flex items-center">
             <ul className="flex space-x-4 mb-0">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-foreground hover:text-primary flex items-center px-3 py-2 rounded-md text-sm font-medium"
                 >
                   <Home className="w-4 h-4 mr-2" />
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/dashboard"
+                <Link
+                  to="/dashboard"
                   className="text-foreground hover:text-primary flex items-center px-3 py-2 rounded-md text-sm font-medium"
                 >
                   <LayoutDashboard className="w-4 h-4 mr-2" />
                   <span>Dashboard</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,13 +1,20 @@
 import './index.css';
 
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import Home from './Home';
 import Nav from './Nav';
+import Dashboard from './Dashboard';
+import NotFound from './NotFound';
 
 export default function App() {
   return (
-    <div>
+    <HashRouter basename="/remote-app">
       <Nav />
-      <Home />
-    </div>
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </HashRouter>
   );
 }
